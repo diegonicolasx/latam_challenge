@@ -1,5 +1,5 @@
 import pandas as pd
-import gdown
+from datetime import datetime
 import json
 
 file_path = "../data/farmers-protest-tweets-2021-2-4.json"
@@ -10,3 +10,6 @@ def load_json(file_path):
         for line in file:
             data.append(json.loads(line))
     return pd.json_normalize(data)
+
+def parse_date(date_str):
+    return datetime.strptime(date_str, '%a %b %d %H:%M:%S %z %Y').date()
