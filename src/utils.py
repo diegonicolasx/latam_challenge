@@ -12,4 +12,4 @@ def load_json(file_path):
     return pd.json_normalize(data)
 
 def parse_date(date_str):
-    return datetime.strptime(date_str, '%a %b %d %H:%M:%S %z %Y').date()
+    return datetime.strptime(date_str, '%Y-%m-%dT%H:%M:%S%z').date()
